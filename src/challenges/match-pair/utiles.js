@@ -36,7 +36,7 @@ export const getRandomSymbols = (n = 8, shouldBeUnique = true) => {
   const mySymbols = [];
   const set = new Set();
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n; ) {
     const randomPos = Math.floor(Math.random() * symbols.length);
     if (shouldBeUnique && set.has(randomPos)) {
       continue;
@@ -44,6 +44,7 @@ export const getRandomSymbols = (n = 8, shouldBeUnique = true) => {
 
     mySymbols.push(symbols[randomPos]);
     set.add(randomPos);
+    i++;
   }
   console.log(mySymbols);
 

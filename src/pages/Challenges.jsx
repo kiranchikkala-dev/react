@@ -6,6 +6,11 @@ import MatchPair from '../challenges/match-pair/App';
 import InfiniteScroll from '../challenges/Infinite-scroll/App';
 import Accordion from '../challenges/accordion/App';
 import Counter from '../challenges/counter/App';
+import TicTaktoe from '../challenges/tictactoe/App';
+import Toast from '../challenges/toast/App';
+import AdvancedCounter from '../challenges/advanced-counter/App';
+import StepperComp from '../challenges/stepper/App';
+import TodoList from '../challenges/todo-list/App';
 import { useParams } from 'react-router-dom';
 
 const reactChallengesMap = {
@@ -16,6 +21,11 @@ const reactChallengesMap = {
   'infinite-scroll': <InfiniteScroll />,
   accordion: <Accordion />,
   counter: <Counter />,
+  tictactoe: <TicTaktoe />,
+  toast: <Toast />,
+  'advanced-counter': <AdvancedCounter />,
+  stepper: <StepperComp />,
+  'todo-list': <TodoList />,
 };
 const Challenges = () => {
   const params = useParams();

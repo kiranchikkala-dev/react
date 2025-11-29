@@ -1,18 +1,35 @@
-import { useCallback, useState } from 'react';
+import React from 'react';
 
-function App() {
-  const [count, setCount] = useState(0);
-  const refFn = (node) => {
-    console.log('Got element once:', node);
+class ClassCompo extends React.Component {
+  constructor(props) {
+    console.log('constructor');
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
+  static getDerivedStateFromProps(prop, state) {
+    console.log('getDerivedStateFromProps');
+    return null;
+  }
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+  handleClick = () => {
+    this.setState((prevState) => ({
+      count: prevState.count + 1,
+    }));
   };
-  return (
-    <div>
-      {console.log('render')}
+  render() {
+    console.log('render');
+    return (
+      <div>
+        {console.log('return')}
 
-      <div ref={refFn}>Hello</div>
-      {count}
-      <button onClick={() => setCount(count + 1)}>click</button>
-    </div>
-  );
+        <h1>{this.state.count}</h1>
+        <button onClick={this.handleClick}>Click</button>
+      </div>
+    );
+  }
 }
-export default App;
+export default ClassCompo;
