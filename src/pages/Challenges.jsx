@@ -11,6 +11,7 @@ import Toast from '../challenges/toast/App';
 import AdvancedCounter from '../challenges/advanced-counter/App';
 import StepperComp from '../challenges/stepper/App';
 import TodoList from '../challenges/todo-list/App';
+import MultiStep from '../challenges/𝗺𝘂𝗹𝘁𝗶-𝘀𝘁𝗲𝗽-𝘄𝗶𝘇𝗮𝗿𝗱/App';
 import { useParams } from 'react-router-dom';
 
 const reactChallengesMap = {
@@ -26,6 +27,7 @@ const reactChallengesMap = {
   'advanced-counter': <AdvancedCounter />,
   stepper: <StepperComp />,
   'todo-list': <TodoList />,
+  'multi-step-wizard': <MultiStep />,
 };
 const Challenges = () => {
   const params = useParams();
